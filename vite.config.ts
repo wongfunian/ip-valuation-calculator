@@ -8,5 +8,5 @@ export default defineConfig({
 	server: {
 		port: 3000,
 	},
-	base: '/ip-valuation/',
+	base: '/ip-valuation-calculator/',
 });
