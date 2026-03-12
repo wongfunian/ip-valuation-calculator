@@ -1,0 +1,167 @@
+@import 'tailwindcss';
+
+:root {
+  color: #1f2937;
+  background: #f3f5f9;
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f3f5f9;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.ip-page {
+  min-height: 100vh;
+  padding: 28px;
+  background: #f3f5f9;
+}
+
+.ip-content-shell {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.ip-header {
+  margin-bottom: 18px;
+}
+
+.ip-header-icon {
+  color: #5f5db7;
+}
+
+.ip-title.ant-typography {
+  margin: 0 !important;
+  font-size: 30px;
+}
+
+.ip-subtitle.ant-typography {
+  margin-top: 8px;
+  margin-bottom: 14px;
+  color: #697386;
+}
+
+.ip-main-card.ant-card {
+  border-radius: 18px;
+  box-shadow: 0 8px 28px rgba(17, 24, 39, 0.06);
+}
+
+.ip-main-card .ant-card-body {
+  padding: 24px;
+}
+
+.ip-steps {
+  margin-bottom: 18px;
+}
+
+.ip-form {
+  margin-top: 8px;
+}
+
+.ip-step-content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ip-section-card.ant-card {
+  border-color: #e8ebf3;
+  border-radius: 12px;
+}
+
+.ip-section-title.ant-typography {
+  margin: 0 !important;
+}
+
+.ip-section-description.ant-typography {
+  display: block;
+  margin-top: 6px;
+  margin-bottom: 0;
+  color: #6b7280;
+}
+
+.ip-section-icon {
+  color: #5f5db7;
+}
+
+.ip-gap-top {
+  margin-top: 12px;
+}
+
+.ip-full-width {
+  width: 100%;
+}
+
+.ip-question-list {
+  width: 100%;
+  margin-top: 12px;
+}
+
+.ip-question-card {
+  border-color: #eceff5;
+  border-radius: 10px;
+}
+
+.ip-question-text.ant-typography {
+  margin-bottom: 8px;
+}
+
+.ip-question-field {
+  margin-bottom: 0;
+}
+
+.ip-radio-vertical .ant-radio-wrapper {
+  align-items: baseline;
+}
+
+.ip-radio-description {
+  font-size: 12px;
+}
+
+.ip-result-card {
+  background: linear-gradient(135deg, #f8f9ff, #ffffff);
+}
+
+.ip-result-box {
+  margin-top: 12px;
+  padding: 18px;
+  border-radius: 10px;
+  border: 1px dashed #c6c9ef;
+  background: #fff;
+}
+
+.ip-result-value.ant-typography {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  color: #4f46be;
+}
+
+.ip-disclaimer-text.ant-typography {
+  margin-bottom: 4px;
+  color: #4b5563;
+}
+
+.ip-footer-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+@media (max-width: 768px) {
+  .ip-page {
+    padding: 14px;
+  }
+
+  .ip-main-card .ant-card-body {
+    padding: 16px;
+  }
+
+  .ip-title.ant-typography {
+    font-size: 24px;
+  }
+}
