@@ -68,7 +68,6 @@ function computeIndicativeValue(values: IpValuationFormValues) {
 	if (!values.economicReach) missingFields.push('economicReach');
 
 	if (missingFields.length > 0) {
-		console.log('[IP Valuation] Missing base fields:', missingFields);
 		return null;
 	}
 	if (r1 === undefined || r2 === undefined || r3 === undefined) {
@@ -81,12 +80,6 @@ function computeIndicativeValue(values: IpValuationFormValues) {
 	const economicReach = economicReachOptions.find((option) => option.value === values.economicReach);
 
 	if (!ipType?.internalPercent || !lifespan?.multiplier || !legalStatus?.multiplier || !economicReach?.multiplier) {
-		console.log('[IP Valuation] Invalid option mapping:', {
-			ipTypeFound: Boolean(ipType),
-			lifespanFound: Boolean(lifespan),
-			legalStatusFound: Boolean(legalStatus),
-			economicReachFound: Boolean(economicReach),
-		});
 		return null;
 	}
 
@@ -94,15 +87,10 @@ function computeIndicativeValue(values: IpValuationFormValues) {
 	for (const question of commercialStrengthQuestions) {
 		const selectedValue = values[question.id];
 		if (!selectedValue) {
-			console.log('[IP Valuation] Missing commercial question answer:', question.id);
 			return null;
 		}
 		const selectedOption = question.options.find((option) => option.value === selectedValue);
 		if (!selectedOption || selectedOption.score === undefined) {
-			console.log('[IP Valuation] Invalid commercial question mapping:', {
-				questionId: question.id,
-				selectedValue,
-			});
 			return null;
 		}
 		totalScore += selectedOption.score;
@@ -162,8 +150,8 @@ export default function App() {
 			<div className="ip-content-shell">
 				<div className="ip-header">
 					<Space align="center" size={12}>
-						<Title level={2} className="ip-title">
-							IP Valuation Calculator
+						<Title level={2} className="ip-title tracking-wide">
+							GovernAI IP Valuation Calculator
 						</Title>
 					</Space>
 					<Paragraph className="ip-subtitle">A guided assessment to estimate the potential value of your intellectual property.</Paragraph>
