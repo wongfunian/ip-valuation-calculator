@@ -132,14 +132,14 @@ export default function App() {
 		// Keep values from unmounted step fields available for final-step calculation.
 		return { ...(form.getFieldsValue(true) as IpValuationFormValues), ...(watchedValues ?? {}) };
 	}, [form, watchedValues]);
-	const shouldShowContactForm = allValues.revenueYear1 === 0;
+	const shouldShowContactForm = allValues.revenueYear3 === 0;
 	const isContactSubmissionMode = currentStep === 1 && shouldShowContactForm;
 
 	const indicativeValue = useMemo(() => computeIndicativeValue(allValues), [allValues]);
 	const formattedIndicativeValue = useMemo(() => (indicativeValue === null ? null : currencyFormatter.format(indicativeValue)), [indicativeValue]);
 
 	const handleNext = async () => {
-		if (currentStep === 1 && allValues.revenueYear1 === 0) {
+		if (currentStep === 1 && allValues.revenueYear3 === 0) {
 			return;
 		}
 		const keys = stepFields[currentStep];
@@ -272,7 +272,7 @@ export default function App() {
 												Contact Form
 											</Title>
 										</Space>
-										{allValues.revenueYear1 === 0 && (
+										{allValues.revenueYear3 === 0 && (
 											<Alert
 												type="warning"
 												showIcon
